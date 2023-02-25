@@ -10,6 +10,14 @@ const Home = () => {
     e.preventDefault();
     setTasks([...tasks, { title, description }]);
   };
+
+  const deleteTask = (index) => {
+    const filteredArr = tasks.filter((val, i) => {
+      return i !== index;
+    });
+    setTasks(filteredArr);
+  };
+
   return (
     <div className="container">
       <h1>Daily Goals</h1>
@@ -28,7 +36,13 @@ const Home = () => {
         <button type="Submit">ADD</button>
       </form>
       {tasks.map((item, index) => (
-        <Task key={index} title={item.title} description={item.description} />
+        <Task
+          key={index}
+          title={item.title}
+          description={item.description}
+          deleteTask={deleteTask}
+          index={index}
+        />
       ))}
     </div>
   );
