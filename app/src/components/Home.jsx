@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import Task from "./Task.jsx";
 
 const Home = () => {
-  const [inputValue, setInputValue] = useState(0);
+  const { tasks, setTasks } = useState([]);
   return (
     <div className="container">
       <h1>Daily Goals</h1>
@@ -10,6 +11,7 @@ const Home = () => {
         <textarea placeholder="Description"></textarea>
         <button type="Submit">ADD</button>
       </form>
+      <Task />
     </div>
   );
 };

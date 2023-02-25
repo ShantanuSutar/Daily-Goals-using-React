@@ -36,7 +36,7 @@ button {
   padding: 15px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  margin: 10px;
+  margin: 10px 0;
   font-size: 1.2rem;
 }
 
@@ -45,4 +45,34 @@ button {
   cursor: pointer;
   background-color: rgb(37, 37, 37);
   color: white;
+}
+
+.task {
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px 0;
+  align-items: center;
+  justify-content: center;
+}
+.task > div {
+  width: 100%;
+}
+.task span {
+  color: rgba(0, 0, 0, 0.516);
+}
+
+.task button {
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  font-size: 1.6rem;
+  background-color: crimson;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.task button:hover {
+  background-color: red;
 }
