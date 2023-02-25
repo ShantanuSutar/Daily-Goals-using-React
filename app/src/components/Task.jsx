@@ -4,8 +4,8 @@ const Task = ({ title, description }) => {
   return (
     <div className="task">
       <div>
-        <p>Title</p>
-        <span>Description</span>
+        <p>{title}</p>
+        <span>{description}</span>
       </div>
       <button>-</button>
     </div>
