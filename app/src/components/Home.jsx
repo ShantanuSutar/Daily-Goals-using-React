@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Task from "./Task.jsx";
 
 const Home = () => {
-  const [tasks, setTasks] = useState([]);
+  const initialArray = localStorage.getItem("tasks")
+    ? JSON.parse(localStorage.getItem("tasks"))
+    : [];
+
+  const [tasks, setTasks] = useState(initialArray);
   const [title, setTitle] = useState([]);
   const [description, setDescription] = useState([]);
 
   const submitHandler = (e) => {
     e.preventDefault();
     setTasks([...tasks, { title, description }]);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   };
 
   const deleteTask = (index) => {
@@ -17,6 +22,10 @@ const Home = () => {
     });
     setTasks(filteredArr);
   };
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks), [tasks]);
+  });
 
   return (
     <div className="container">
