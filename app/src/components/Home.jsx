@@ -13,7 +13,8 @@ const Home = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     setTasks([...tasks, { title, description }]);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    setTitle("");
+    setDescription("");
   };
 
   const deleteTask = (index) => {
